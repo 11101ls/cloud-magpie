@@ -1,9 +1,0 @@
-// 更改elementPlus主题配置
-// 源文件在 element-plus/theme-chalk/src/common/var.scss
-
-@forward 'element-plus/theme-chalk/src/common/var.scss' with (
-  // $colors: ('primary': ('base': #FFAFCC),
-  // ),
-    $colors: (
-      'primary': ('base': #FFAFCC))
-);

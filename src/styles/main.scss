@@ -1,0 +1,12 @@
+
+@import "./common/index.scss";
+html,
+body {
+  padding: 0;
+  margin: 0;
+}
+#app {
+  min-width: 1440px;
+  margin: 0 auto;
+  font-weight: normal;
+}

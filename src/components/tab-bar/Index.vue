@@ -4,8 +4,7 @@
       <div class="flex-grow-left" />
       <el-menu-item index="/home">LOGO</el-menu-item>
       <div class="flex-grow" />
-      <!-- <el-menu-item index="/index">首页</el-menu-item> -->
-      <template v-for="(routeItem,index) in routes" :key="index">
+      <template v-for="(routeItem,index) in routesLits" :key="index">
         <el-sub-menu :index="routeItem.path" v-if="routeItem.children">
           <template #title>{{routeItem.meta!.title}}</template>
           <el-menu-item :index="item.path" v-for="item in routeItem.children" :key="item.path">{{item.meta!.title}}</el-menu-item>
@@ -29,13 +28,15 @@
 
 <script lang="ts" setup>
 import { ref } from 'vue';
-import { useRouter } from 'vue-router';
+import { useRouter, useRoute } from 'vue-router';
 const router=useRouter()
+const route = useRoute();
 const routes=router.options.routes
+const routesLits = routes[0].children;
+let activeIndex = ref('');
+activeIndex.value = route.path;
 
 
-
-const activeIndex = ref('/index');
 const handleSelect = (key: string, keyPath: string[]) =>
 {
   console.log(key, keyPath);
@@ -45,6 +46,11 @@ const handleSelect = (key: string, keyPath: string[]) =>
 .header{
     // display: flex;
     // align-items: center;
+    position: sticky;
+      z-index: 700;
+      box-shadow: 0 0 8px rgba(0, 0, 0, 0.4);
+      top: 0;
+      background-color: rgba($color: #fff, $alpha: 0.6);
     .flex-grow-left {
         flex: .1;
       }
@@ -56,4 +62,7 @@ const handleSelect = (key: string, keyPath: string[]) =>
   ::v-deep(.el-menu--horizontal>.el-menu-item),::v-deep(.el-menu--horizontal>.el-sub-menu.is-active .el-sub-menu__title),::v-deep(.el-menu--horizontal>.el-sub-menu .el-sub-menu__title){
     border: none;
   }
+    ::v-deep(.el-menu) {
+      background-color: inherit;
+    }
 </style>

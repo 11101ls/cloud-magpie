@@ -7,12 +7,20 @@ export {}
 
 declare module '@vue/runtime-core' {
   export interface GlobalComponents {
-    ElButton: typeof import('element-plus/es')['ElButton']
+    ElAffix: typeof import('element-plus/es')['ElAffix']
+    ElAutocomplete: typeof import('element-plus/es')['ElAutocomplete']
+    ElButton: typeof import("element-plus/es")["ElButton"]
+    ElCarousel: typeof import('element-plus/es')['ElCarousel']
+    ElCarouselItem: typeof import('element-plus/es')['ElCarouselItem']
     ElMenu: typeof import('element-plus/es')['ElMenu']
     ElMenuItem: typeof import('element-plus/es')['ElMenuItem']
+    ElScrollbar: typeof import("element-plus/es")["ElScrollbar"]
     ElSubMenu: typeof import('element-plus/es')['ElSubMenu']
+    Index: typeof import('./src/components/loading/Index.vue')['default']
     RouterLink: typeof import('vue-router')['RouterLink']
     RouterView: typeof import('vue-router')['RouterView']
-    TabBar: typeof import('./src/components/TabBar/index.vue')['default']
+  }
+  export interface ComponentCustomProperties {
+    vInfiniteScroll: typeof import('element-plus/es')['ElInfiniteScroll']
   }
 }
