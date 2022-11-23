@@ -21,7 +21,7 @@ const routes: Array<RouteRecordRaw> = [
       title: "",
     },
     component: () => import("@/views/HomeView.vue"),
-    redirect: "/index", //路由重定向到
+    redirect: "/login", //路由重定向到
     alias: ["/"], //路由起别名
     children: [
       {

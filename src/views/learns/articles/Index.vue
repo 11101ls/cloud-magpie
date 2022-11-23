@@ -69,7 +69,7 @@ onMounted(() =>
 </script>
 
 <style scoped lang='scss'>
-.articles {}
+// .articles {}
 
 .contain {
   margin: 100px auto 0;
