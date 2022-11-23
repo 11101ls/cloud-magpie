@@ -3,6 +3,9 @@
     :infinite-scroll-disabled="disabled" :infinite-scroll-delay="500">
 
     <ContentItem v-for="(item,index) in list" :key="index" :item="item" :class="['infinite-list-item']"></ContentItem>
+    <div class="load">
+      <Loading :isShowLoading='true' />
+    </div>
   </div>
 </template>
 
@@ -86,5 +89,10 @@ const getDate = () =>
   margin: 0;
   list-style: none;
   overflow: auto
+}
+.load {
+  height: 120px;
+  display: flex;
+  align-items: center;
 }
 </style>

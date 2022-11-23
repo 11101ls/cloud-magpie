@@ -1,7 +1,7 @@
 <template>
   <div class="right">
     <div class="recommend  sticky top-10px  w-full bg-white">
-      <p class="recommend-title py-16px pb-10px mb-10px">推荐文章</p>
+      <p class="recommend-title p-16px pb-10px mb-10px">推荐文章</p>
       <ul class="recommend-list">
         <li class="recommend-list-item flex" v-for="(item,index) in recommendList" :key="index"
           @click="goRouter(item.id,item.img)">
@@ -33,7 +33,7 @@ const goRouter = (id: number, url: string) =>
 
 <style scoped lang='scss'>
 .right {
-  top: -16px;
+  top: 0px;
 
 }
 

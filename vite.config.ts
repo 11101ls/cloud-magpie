@@ -13,7 +13,7 @@ import { presetIcons, presetAttributify, presetUno } from "unocss"
 export default defineConfig(({ command, mode }) => {
   // vite不自动导入env文件
   const env = loadEnv(mode, process.cwd(), "")
-  console.log(env)
+  // console.log(env)
 
   return {
     plugins: [
@@ -66,6 +66,15 @@ export default defineConfig(({ command, mode }) => {
           additionalData: `@use "@/styles/element/index.scss" as *;`,
           // // @use "@/styles/common/vars.scss" as *;`,
           // additionalData: '@import "@/styles/common/vars.scss";',
+        },
+      },
+    },
+    server: {
+      proxy: {
+        "/api/v1": {
+          target: "http://localhost:3030",
+          changeOrigin: true,
+          rewrite: (path) => path.replace(/^\/api/, ""),
         },
       },
     },
