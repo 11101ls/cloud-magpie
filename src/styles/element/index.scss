@@ -1,0 +1,10 @@
+// 更改elementPlus主题配置  配置全局变量
+// 源文件在 element-plus/theme-chalk/src/common/var.scss
+
+@forward 'element-plus/theme-chalk/src/common/var.scss' with ( // $colors: ('primary': ('base': #FFAFCC),
+  // ),
+  $colors: ('primary': ('base': #FFAFCC)));
+
+    // 将全局的变量引入到这里
+    @import "../common//vars.scss";
+  

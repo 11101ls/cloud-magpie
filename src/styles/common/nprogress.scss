@@ -1,0 +1,17 @@
+@import 'nprogress/nprogress.css';
+
+/*设置页面加载进度条 */
+#nprogress .bar {
+  top: 58px;
+    background: linear-gradient(90deg,
+        $orchid-pink,
+        $pink-avenderr,
+        $orchid-pink,
+        $nadeshiko-pink,
+      );
+  height: 4px;
+}
+
+#nprogress .peg {
+  display: none;
+}
